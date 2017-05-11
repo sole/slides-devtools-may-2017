@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Firefox Developer Tools</title>
+		
+		<link rel="stylesheet" href="vendor/prism/prism.css">
+		<script src="vendor/prism/prism.js" defer></script>
+
+		<!-- mvsd defaults, basic but functional -->
+		<link rel="stylesheet" href="src/mvsd.css">
+		<!-- additional styles for the example -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="src/mvsd.js" defer></script>
+		<script src="js/main.js" defer></script>
+	</head>
+	<body>
+		<main>
+			<nav id="handle">@supersole</nav>
+
+			<section class="intro">
+				<h1>Firefox Developer Tools</h1>
+				<h2>Soledad Penadés</h2>
+				<h3><a href="https://soledadpenades.com">soledadpenades.com</a> / @supersole</h3>
+			</section>
+			<section>
+				<h1>Show, don't tell: the tools</h1>
+				<!--Panels-->
+				<!--Inspecting the slide deck, change colours-->
+			</section>
+			<section>
+				<h1>Normally inspecting websites</h1>
+			</section>
+			<section>
+				<h1>Actually...</h1>
+				<h2 class="fragment">... we can inspect even more than websites</h2>
+			</section>
+			<section>
+				<h1>Let's inspect Firefox</h1>
+				<h2>We'll use <em>the Browser Toolbox</em></h2>
+			</section>
+			<section>
+				<pre>
+					<code class="language-css">
+						#main-window {
+							transform: scaleX(-1);
+						}
+					</code>
+				</pre>
+				<h2 class="fragment">(horizontal flip)</h2>
+			</section>
+			<section>
+				<pre>
+					<code class="language-css">
+						#nav-bar {
+							background: yellow;
+						}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<pre>
+					<code class="language-css">
+						#urlbar {
+							background: aqua;
+						}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h1>DevTools are also built like this!</h1>
+				<pre class="fragment">
+					<code class="language-css">
+						devtools-toolbox-bottom-iframe {
+							border: 20px outset orange;
+							box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+							margin: 30px;
+						}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<h1>Meanwhile, in Firefox's source code...</h1>
+				<h2 class="fragment"><tt>devtools/</tt></h2>
+				<h3 class="fragment"><tt>devtools/client/</tt></h3>
+				<h3 class="fragment"><tt>devtools/server/</tt></h3>
+			</section>
+			<section>
+				<h1>It's like a website</h1>
+				<h2 class="fragment">the <strong>client</strong> (what you see) connects to the <strong>server</strong> and asks for data</h2>
+				<h2 class="fragment">except for the fact that <em>websites have APIs, but we have a <strong>protocol</strong></em></h2>
+			</section>
+			<section>
+				<h1>The Remote Debugging Protocol</h1>
+				<h2 class="fragment">RDP</h2>
+			</section>
+
+			<section>
+				<pre>
+					<code class="language-javascript">
+					firefox -P development -console
+					</code>
+				</pre>
+				<p class="fragment">(launches Firefox and opens a console showing all the logs)</p>
+			</section>
+			<section>
+				<h1>Who is the server?</h1>
+				<h2 class="fragment">Anything that can be debugged:</h2>
+				<ul>
+					<li class="fragment">Firefox Desktop</li>
+					<li class="fragment">Firefox for Android</li>
+					<li class="fragment">(you might remember) Firefox OS devices</li>
+					<li class="fragment">(with adapters) other things/anything you implement</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Things we ask to the server</h1>
+				<ul>
+					<li class="fragment">What can we inspect? (capabilities)</li>
+					<li class="fragment">List of tabs</li>
+					<li class="fragment">Data about a tab</li>
+					<li class="fragment">Etc...</li>
+				</ul>
+				<h2 class="fragment">Debugging servers or connections aren't necessarily fast, so it's better to ask for data and render/process it in the client</h2>
+			</section>
+
+			<section>
+				<h1>Things that run on the client</h1>
+				<ul>
+					<li class="fragment">The DevTools UI</li>
+					<li class="fragment">Rendering graphs about debugging data</li>
+					<li class="fragment">Rendering HTML trees, filtering data, etc</li>
+					<li class="fragment">The debugger!</li>
+					<li class="fragment">The console!</li>
+					<li class="fragment">etc etc...</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Coming up now...</h1>
+				<h2>break and debugger talk!</h2>
+			</section>
+			
+			<section class="splash">
+				<h1>Thanks!</h1>
+				<h2><tt>soledadpenades.com</tt></h2>
+			</section>
+
+		</main>
+	</body>
+</html>
